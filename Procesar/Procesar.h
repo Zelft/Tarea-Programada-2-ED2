@@ -13,5 +13,6 @@ public:
 	Procesar(vector<Persona>p) { this->personas = p; };
 	void setPersonas(vector<Persona>p);
 	void cargarArchivo();
+	void insertarArchivo(Persona mensaje);
 	vector<Persona> leer();
 };

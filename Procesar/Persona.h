@@ -25,5 +25,6 @@ public:
 	void setApellido(string str) { apellido = str; }
 	void setApellido2(string str) { apellido2 = str; }
 	void setFechaNacimiento(string str) { fechaNacimiento = str; }
+	void mostrarPersona() { cout << cedula << " " << nombre << " " << apellido << " " << apellido2  << " " << fechaNacimiento << endl;}
 };
 

@@ -15,8 +15,11 @@ int main()
 	vector<Persona>people = procesado.leer();
 	procesado.setPersonas(people);
 	procesado.cargarArchivo();
+	//procesado.insertarArchivo(Persona("151515151","Jaime","Constru","Lampara","04/04/19"));
 
-	cout << "\n\n\n\n----------------- Probando Hash -----------------\n";
+
+
+	/*cout << "\n\n\n\n----------------- Probando Hash -----------------\n";
 	Hash* pruebaHash = new Hash();
 	for (int i = 1; i < people.size(); i++) {
 		pruebaHash->añadirPersona(people[i]);
@@ -29,6 +32,6 @@ int main()
 	pruebaHash->imprimirTabla();
 	cout << "\nSe va a eliminar la cedula Danny...\n";
 	pruebaHash->eliminarPersona("Danny");
-	pruebaHash->imprimirTabla();
+	pruebaHash->imprimirTabla();*/
 
 }
