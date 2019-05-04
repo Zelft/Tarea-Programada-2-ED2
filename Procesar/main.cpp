@@ -3,36 +3,32 @@
 #include <string>
 #include "Persona.h"
 #include "Procesar.h"
+#include "Hash.h"
 #include <string>
 
-vector<Persona> leer();
 using namespace std;
 
 int main()
 {
-	vector<Persona>people = leer();
-	Procesar p (people);
-	p.cargarArchivo();
-}
 
-vector<Persona> leer() {
-	ifstream archivo;
-	string valor;
-	string cedula, nombre, apellido, apellido2, fecha;
-	archivo.open("data_base.csv");
-	int c = 0;
-	vector<Persona>personas;
-	while (archivo.good()) {
-		if (c > 4) {
-			getline(archivo, cedula, ';');
-			getline(archivo, nombre, ';');
-			getline(archivo, apellido, ';');
-			getline(archivo, apellido2, ';');
-			getline(archivo, fecha, ';');
-			personas.push_back(Persona(cedula,nombre,apellido,apellido,fecha));
-			cout << cedula << " " << nombre<<" "<<apellido<<" "<<apellido2<<" "<<fecha;
-		}
-		c++;
+	Procesar procesado({});
+	vector<Persona>people = procesado.leer();
+	procesado.setPersonas(people);
+	procesado.cargarArchivo();
+
+	cout << "\n\n\n\n----------------- Probando Hash -----------------\n";
+	Hash* pruebaHash = new Hash();
+	for (int i = 1; i < people.size(); i++) {
+		pruebaHash->añadirPersona(people[i]);
 	}
-	return personas;
+	pruebaHash->imprimirTabla();
+	cout<<"\nExiste la cédula Danny? = "<<pruebaHash->existeCedula("Danny") << endl;
+	cout <<"Obteniendo nombre de la cedula Danny: " << pruebaHash->buscarPersona("Danny")->getNombre()<<endl;
+	pruebaHash->modificarPersona("Danny","fuck", "fuck", "fuck", "fuck");
+	cout << "Obteniendo nombre de la cedula Danny: " << pruebaHash->buscarPersona("Danny")->getNombre() << endl;
+	pruebaHash->imprimirTabla();
+	cout << "\nSe va a eliminar la cedula Danny...\n";
+	pruebaHash->eliminarPersona("Danny");
+	pruebaHash->imprimirTabla();
+
 }

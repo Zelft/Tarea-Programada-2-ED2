@@ -11,5 +11,7 @@ private:
 	vector<Persona> personas;
 public:
 	Procesar(vector<Persona>p) { this->personas = p; };
+	void setPersonas(vector<Persona>p);
 	void cargarArchivo();
+	vector<Persona> leer();
 };
