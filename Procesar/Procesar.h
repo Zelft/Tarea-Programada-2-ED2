@@ -10,9 +10,8 @@ class Procesar
 private:
 	vector<Persona> personas;
 public:
-	Procesar(vector<Persona>p) { this->personas = p; };
+	Procesar() { };
 	void setPersonas(vector<Persona>p);
 	void cargarArchivo();
 	void insertarArchivo(Persona mensaje);
-	vector<Persona> leer();
 };

@@ -11,17 +11,15 @@ using namespace std;
 int main()
 {
 
-	Procesar procesado({});
-	vector<Persona>people = procesado.leer();
-	procesado.setPersonas(people);
+	Procesar procesado{};
 	procesado.cargarArchivo();
-	//procesado.insertarArchivo(Persona("151515151","Jaime","Constru","Lampara","04/04/19"));
+	procesado.insertarArchivo(Persona("151515151","Jaime","Constru","Lampara","04/04/19"));
 
 
 
 	/*cout << "\n\n\n\n----------------- Probando Hash -----------------\n";
 	Hash* pruebaHash = new Hash();
-	for (int i = 1; i < people.size(); i++) {
+	for (int i = 1; i < procesado.setPersonas().size(); i++) {
 		pruebaHash->añadirPersona(people[i]);
 	}
 	pruebaHash->imprimirTabla();
