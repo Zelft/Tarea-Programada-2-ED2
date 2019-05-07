@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include <string>
+#include <vector>
 #include "Persona.h"
 
 using namespace std;
@@ -20,6 +21,7 @@ public:
 	int numeroColisiones(int idx);
 	bool existeCedula(string cedula);
 	void eliminarPersona(string key);
+	vector<Persona> devolverPersonas();
 	void imprimirTabla();
 };
 

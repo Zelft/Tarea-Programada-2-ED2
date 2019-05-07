@@ -23,10 +23,10 @@ void Procesar::cargarArchivo()
 	}
 	personas.pop_back();
 	archivo.close();
-	for (int i = 0; i < personas.size(); i++) {
+	/*for (int i = 0; i < personas.size(); i++) {
 		cout << "\t Persona " << i + 1;
 		personas[i].mostrarPersona();
-	}
+	}*/
 }
 
 void Procesar::insertarArchivo(Persona p)

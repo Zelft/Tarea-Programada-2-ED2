@@ -19,4 +19,5 @@ public:
 	bool validarNombre(string nombre);
 	bool validarFecha(string fecha);
 	bool validarPersona(Persona p);
+	vector<Persona> getPersonas() { return personas; }
 };
