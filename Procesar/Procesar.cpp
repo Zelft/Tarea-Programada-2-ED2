@@ -53,3 +53,41 @@ void Procesar::insertarArchivo(Persona p)
 	archivoC.close();
 	cout << "Mensaje guardado";
 }
+
+bool Procesar::validarCedula(string cedula)
+{
+	int length = cedula.length();
+	int c = 0;
+	if (length == 0) return false;
+	for (int i = 0; i < length; i++) {
+		if (!isdigit(cedula[i])) return false;
+		c++;
+	}
+	return length==9;
+}
+
+bool Procesar::validarNombre(string nombre)
+{
+	int c = 0;
+	int largo = nombre.length();
+	for (int i = 0; i < largo; i++) {
+		if (!isupper(nombre[0]) || !isalpha(nombre[i])) return false;
+		return largo>0 && largo <= 25;
+	}
+}
+
+bool Procesar::validarFecha(string fecha)
+{		//25/02/1997
+	int largo = fecha.length();
+	if (!isdigit(fecha[0]) || !isdigit(fecha[1]) || !(fecha[2] == '/') ||
+		!isdigit(fecha[3]) || !isdigit(fecha[4]) || !(fecha[5] == '/') ||
+		!isdigit(fecha[6]) || !isdigit(fecha[7]) || !isdigit(fecha[8]) || !isdigit(fecha[9])) return false;
+	return largo == 10;
+}
+
+bool Procesar::validarPersona(Persona p)
+{
+	if (validarCedula(p.getCedula()) && validarNombre(p.getNombre()) && validarNombre(p.getApellido())
+		&& validarNombre(p.getApellido2()) && validarFecha(p.getFechaNacimiento())) return true;
+	return false;
+}

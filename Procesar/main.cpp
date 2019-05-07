@@ -11,9 +11,10 @@ using namespace std;
 int main()
 {
 
-	Procesar procesado{};
-	procesado.cargarArchivo();
-	procesado.insertarArchivo(Persona("151515151","Jaime","Constru","Lampara","04/04/19"));
+	Procesar p{};
+	cout << p.validarFecha("25/02/1997");
+	//p.cargarArchivo();
+	//p.insertarArchivo(Persona("587541188","Diego","Mora","Rojas","11/06/14"));
 
 
 
